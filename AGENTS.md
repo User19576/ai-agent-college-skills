@@ -6,7 +6,7 @@ This directory is the working copy of `User19576/hermes-agent-college-skills`. `
 
 - `skills/academic-assignment-support/` contains `SKILL.md`, a course-specific rules reference, and a disclosure template. `skills/completed-assignment-cleanup/`, `skills/assessment-evidence-audit/`, and `skills/assignment-export-verification/` each contain `SKILL.md`.
 - The root README links related bundled Hermes and third-party skills without vendoring them. These included skills are course-specific; do not present them as general academic policy.
-- The root README documents manual installation and a short prompt for direct GitHub skill installation. `installation/FOR_HERMES.md` holds the approval-gated agent procedure; it is not a local-clone workflow. `LICENSE` contains the MIT terms.
+- The root README documents manual installation and a short prompt for direct GitHub skill installation. `installation/FOR_HERMES.md` holds the approval-gated agent procedure; it is not a local-clone workflow. `installation/PROFILE_SUGGESTIONS.md` gives optional, consent-based SOUL/USER/MEMORY examples without publishing the author's identifiers. `LICENSE` contains the MIT terms.
 - No manifests, lockfiles, CI workflows, tests, or lint configuration are present. No setup, build, test, or lint commands are defined.
 
 ## Repository

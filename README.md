@@ -2,6 +2,8 @@
 
 Four agent-created skills for Hermes that grew out of my Cork College of FET assignments. Classmates might find them useful, but they reflect my briefs and how I work. This repository is not assessed work; assignment AI-use rules apply when using the skills on coursework, not when developing the repository. Check your own brief and instructor directions.
 
+### A dedicated Hermes profile is strongly recommended
+
 ## Included skills
 
 - [`academic-assignment-support`](skills/academic-assignment-support/SKILL.md) helps review briefs and drafts while keeping assessed writing with the learner. It includes a course-specific rules reference and an AI-use disclosure template.
@@ -21,17 +23,17 @@ These are copies of skills from my own Hermes setup, not official Hermes skills.
 4. Copy `academic-assignment-support/`, `completed-assignment-cleanup/`, `assessment-evidence-audit/`, and `assignment-export-verification/` from this repository's `skills/` into your Hermes `skills/`. Keep `SKILL.md` and any `references/` or `templates/` folders in place. If any skill already exists, back it up and compare the copies before replacing it.
 5. Start a new chat in that profile and type `/skills`. You should see all four names. You can also run `hermes skills list --enabled-only` (or `hermes -p NAME skills list --enabled-only` for a named profile). If a skill is missing, check that `SKILL.md` sits directly inside its folder.
 
-This installs only the four skills. It does not change `SOUL.md`, `memories/USER.md`, or `memories/MEMORY.md`. See the [Hermes skills guide](https://hermes-agent.nousresearch.com/docs/guides/work-with-skills) for more on loading skills.
+This installs only the four skills. It does not change `SOUL.md`, `memories/USER.md`, or `memories/MEMORY.md`. If you want to consider separate profile changes, see the optional [coursework profile suggestions](installation/PROFILE_SUGGESTIONS.md). They are not intended to copy my personal details into your profile. See the [Hermes skills guide](https://hermes-agent.nousresearch.com/docs/guides/work-with-skills) for more on loading skills.
 
 ### Install via Hermes prompt
 
-Paste this into Hermes. It will follow the [installation guide](installation/FOR_HERMES.md), show any proposed changes to the skills and your `SOUL.md`, `USER.md`, and `MEMORY.md`, and wait for typed approval before making them.
+Paste this into Hermes. It will follow the [installation guide](installation/FOR_HERMES.md), ask which optional [profile suggestions](installation/PROFILE_SUGGESTIONS.md) apply to you, show proposed changes or **no change** for each target, and wait for typed approval before making them. You can choose a skills-only installation.
 
 ```text
 Install academic-assignment-support, completed-assignment-cleanup, assessment-evidence-audit, and assignment-export-verification directly from https://github.com/User19576/hermes-agent-college-skills into my Hermes profile, without cloning it. Read installation/FOR_HERMES.md in that repository and follow its review and approval steps. Show me the exact plan and wait for the specified typed approval before changing anything.
 ```
 
-## Related skills
+## Related skills — Highly recommended
 
 Hermes normally bundles these five skills, so you usually don't need to install them. A profile can disable or omit them; check `hermes skills list --source builtin --enabled-only` if one is missing. `humanizer` started as a third-party skill and was ported into Hermes.
 
