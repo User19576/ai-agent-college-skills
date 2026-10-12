@@ -18,7 +18,7 @@ If the user confirms this drafting and archival workflow, propose a short entry 
 
 > For assignment drafting, use a separate, clearly labelled non-submittable scaffold with headings, evidence slots, and learner-answer prompts, not model-written assessed prose. Keep an honest `AI-DISCLAIMER.md` of actual AI assistance in each assignment workspace. After learner-confirmed completion, preserve the submitted PDF, editable source, brief, and evidence; archive superseded drafts without deletion. Use `academic-assignment-support` and `completed-assignment-cleanup` when relevant.
 
-If the installed skills already cover this and the user does not need it in persistent memory, mark **no change**. Never record a submission as verified merely because the learner reports it.
+If the user confirms this workflow and asks to remember it, propose this entry or a clearly explained, non-duplicated subset. Do not replace this workflow with unrelated profile status merely because installed skills cover similar steps. If the user declines persistent memory, mark **no change**. Never record a submission as verified merely because the learner reports it.
 
 ## Candidate `USER.md` details and preferences
 
@@ -38,6 +38,6 @@ Do not transfer the repository author's name, college, student number, or possib
 
 ## Consent and verification
 
-For agent-assisted installation, ask for every desired placeholder value, then show the completed addition or **no change** for each target, with existing overlapping text and the selected memory destination. Do not request or include unneeded identifiers. Explain persistence and any provider mirroring. Wait for the typed approval specified in [FOR_HERMES.md](FOR_HERMES.md) before writing; skill-install approval does not imply approval for profile edits. Back up each edited file, or use the provider's supported export/backup method when available. After writing, read back the exact target through the same supported interface and start a new session to check what loads. If the target cannot be read back, report that limitation without claiming success.
+For agent-assisted installation, ask which examples the user wants **before** the first approval preview. Ask for every desired placeholder value, then show the completed addition or **no change** for each target, with existing overlapping text and the selected memory destination. Do not request or include unneeded identifiers. Explain persistence and any provider mirroring. Wait for the typed approval specified in [FOR_HERMES.md](FOR_HERMES.md) before writing; skill-install approval does not imply approval for profile edits. Back up each edited file, or use the provider's supported export/backup method when available. After writing, read back the exact target through the same supported interface and start a new session to check what loads. If the target cannot be read back, report that limitation without claiming success.
 
 Manual installation in [README.md](../README.md) copies only skills; these suggestions are optional and require a separate, deliberate decision.

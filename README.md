@@ -2,7 +2,7 @@
 
 Four agent-created skills for Hermes that grew out of my Cork College of FET assignments. Classmates might find them useful, but they reflect my briefs and how I work. This repository is not assessed work; assignment AI-use rules apply when using the skills on coursework, not when developing the repository. Check your own brief and instructor directions.
 
-### A dedicated Hermes profile is strongly recommended
+### A dedicated Hermes profile is strongly recommended if you plan to use Hermes for other purposes
 
 ## Included skills
 
@@ -27,10 +27,10 @@ This installs only the four skills. It does not change `SOUL.md`, `memories/USER
 
 ### Install via Hermes prompt
 
-Paste this into Hermes. It will follow the [installation guide](installation/FOR_HERMES.md), ask which optional [profile suggestions](installation/PROFILE_SUGGESTIONS.md) apply to you, show proposed changes or **no change** for each target, and wait for typed approval before making them. You can choose a skills-only installation.
+Paste this once into Hermes. It will ask which optional [profile suggestions](installation/PROFILE_SUGGESTIONS.md) you want, gather only the identifiers you choose to save, and show one combined plan. After typed approval, it will install, apply approved profile changes, and verify them. You can choose skills only.
 
 ```text
-Install academic-assignment-support, completed-assignment-cleanup, assessment-evidence-audit, and assignment-export-verification directly from https://github.com/User19576/hermes-agent-college-skills into my Hermes profile, without cloning it. Read installation/FOR_HERMES.md in that repository and follow its review and approval steps. Show me the exact plan and wait for the specified typed approval before changing anything.
+Install academic-assignment-support, completed-assignment-cleanup, assessment-evidence-audit, and assignment-export-verification directly from https://github.com/User19576/hermes-agent-college-skills into my Hermes profile; no clone. Read installation/FOR_HERMES.md and installation/PROFILE_SUGGESTIONS.md there. In this setup, use clarify (or equivalent) to ask which optional SOUL.md, USER.md, MEMORY.md changes I want; offer skills-only. Ask exact identifiers only if I choose to save them; infer none, write no placeholders. If questions time out or the tool is unavailable, ask in chat and wait; never assume skills-only. Preview one exact plan and the observed LOW scan warning. Wait for the guide's typed approval before any installation or profile write. Then complete and verify all approved changes without a second installation request.
 ```
 
 ## Related skills — Highly recommended
