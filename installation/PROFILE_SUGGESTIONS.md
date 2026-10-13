@@ -24,9 +24,9 @@ If the user confirms this workflow and asks to remember it, propose this entry o
 
 Ask which of these actually apply. Propose only confirmed, non-duplicated entries, in the user's own terms. Identity is optional; do not require a number to use the skills:
 
-> The learner identifies as [FULL_NAME] in coursework drafts at [COLLEGE_OR_COURSE]. Their student number is [STUDENT_NUMBER]; use it only where the current brief explicitly requires it. Never infer or store passwords from it.
+> The learner identifies as [FULL_NAME] in coursework drafts for [COURSE]. Their student number is [STUDENT_NUMBER]; use it only where the current brief explicitly requires it. Never infer or store passwords from it.
 
-Ask for `[FULL_NAME]`, `[COLLEGE_OR_COURSE]`, and `[STUDENT_NUMBER]` separately if the user wants those details saved. Use the user's exact supplied values; do not infer a student number from a username, example, or another learner's details. If any field is not confirmed or is unnecessary, omit that clause rather than leaving a placeholder in `USER.md`. A student number is not a password hint; never derive, use, or save a credential from it.
+Ask for `[FULL_NAME]`, `[COURSE]`, and `[STUDENT_NUMBER]` separately if the user wants those details saved. If the user confirms they study Network Administration, strongly recommend saving the student number as an optional entry. Do not require the number or ask for its value unless the user opts in. This recommendation is not a verified course rule. Use the user's exact supplied values; do not infer a student number from a username, example, or another learner's details. If any field is not confirmed or is unnecessary, omit that clause rather than leaving a placeholder in `USER.md`. A student number is not a password hint; never derive, use, or save a credential from it.
 
 - Prefers concise, direct replies. If they already use `caveman` and request it, use ultra by default; do not require that skill in profiles where it is absent.
 - For practical coursework, prefers short, screenshot-led reports where appropriate; writes assessed prose themselves. May draft in Markdown and export PDF if confirmed.
