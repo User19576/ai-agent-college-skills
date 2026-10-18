@@ -13,6 +13,10 @@ Four agent-created skills for Hermes, plus separate OpenClaw adaptations, grew o
 
 These are copies of skills from my own Hermes setup, not official Hermes skills. [Design principles](DESIGN_PRINCIPLES.md) explains the choices behind them.
 
+## Development approach
+
+Hermes comes first: develop and review skills and improvements in `skills/` before adapting them for OpenClaw. OpenClaw equivalents follow once the corresponding Hermes work is ready; they are not developed in parallel by default or required to complete the Hermes phase. Existing `openclaw-skills/` copies may therefore lag behind Hermes. Deferred adaptations are tracked in [TODO.md](TODO.md). Each adaptation still needs OpenClaw-specific tool and runtime checks; a ready Hermes skill does not prove OpenClaw support.
+
 ## Hermes installation
 
 ### Manual installation
