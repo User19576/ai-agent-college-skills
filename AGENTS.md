@@ -10,6 +10,12 @@ This directory is the working copy of `User19576/hermes-agent-college-skills`. `
 - The root README documents Hermes installation and a workspace-scoped OpenClaw installation route using `openclaw-skills/`, not `skills/`. `installation/FOR_HERMES.md` holds the approval-gated Hermes procedure; it is not a local-clone workflow. `installation/FOR_OPENCLAW.md` covers approval-gated local-directory installs after a reviewed checkout, with separately consented OpenClaw workspace SOUL/USER/MEMORY additions and multi-user personal USER targeting. `installation/OPENCLAW_TOOLS.md` cites native tool documentation and source code. `installation/PROFILE_SUGGESTIONS.md` gives optional Hermes SOUL/USER/MEMORY source examples without publishing the author's identifiers; OpenClaw-specific destinations and wording live in its own guide. `LICENSE` contains the MIT terms.
 - No manifests, lockfiles, CI workflows, tests, or lint configuration are present. No setup, build, test, or lint commands are defined.
 
+## Development order
+
+- Develop and review skills and improvements in the Hermes `skills/` tree first. Adapt them to `openclaw-skills/` only once the corresponding Hermes work is ready; do not develop both versions in parallel by default.
+- OpenClaw equivalents are a follow-up phase, not a requirement for completing Hermes work. Track deferred adaptations in `TODO.md`; existing OpenClaw copies may lag behind Hermes.
+- Preserve the settled behavior when adapting, but use OpenClaw-native tools and verify its actual capabilities separately. Hermes readiness does not establish OpenClaw runtime support.
+
 ## Repository
 
 - Public GitHub repository: `https://github.com/User19576/hermes-agent-college-skills`. Check the remote branch before claiming a change was pushed.
