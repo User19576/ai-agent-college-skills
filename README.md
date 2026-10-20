@@ -8,7 +8,7 @@ Four agent-created skills for Hermes, plus separate OpenClaw adaptations, grew o
 
 - [`academic-assignment-support`](skills/academic-assignment-support/SKILL.md) helps review briefs and drafts while keeping assessed writing with the learner. It includes a course-specific rules reference and an AI-use disclosure template.
 - [`completed-assignment-cleanup`](skills/completed-assignment-cleanup/SKILL.md) helps archive old drafts without changing the submitted file or original evidence.
-- [`assessment-evidence-audit`](skills/assessment-evidence-audit/SKILL.md) maps brief requirements to visible evidence in the current report and flags gaps without inventing proof.
+- [`assessment-evidence-audit`](skills/assessment-evidence-audit/SKILL.md) maps brief requirements to visible evidence in the current report and flags gaps without inventing proof. Its [filesystem and share evidence reference](skills/assessment-evidence-audit/references/filesystem-and-share-evidence.md) distinguishes command scope, permission modes, recursive changes, and mount evidence.
 - [`assignment-export-verification`](skills/assignment-export-verification/SKILL.md) compares an editable report with its PDF/DOCX export and checks images and page layout.
 
 These are copies of skills from my own Hermes setup, not official Hermes skills. [Design principles](DESIGN_PRINCIPLES.md) explains the choices behind them.
@@ -16,6 +16,8 @@ These are copies of skills from my own Hermes setup, not official Hermes skills.
 ## Development approach
 
 Hermes comes first: develop and review skills and improvements in `skills/` before adapting them for OpenClaw. OpenClaw equivalents follow once the corresponding Hermes work is ready; they are not developed in parallel by default or required to complete the Hermes phase. Existing `openclaw-skills/` copies may therefore lag behind Hermes. Deferred adaptations are tracked in [TODO.md](TODO.md). Each adaptation still needs OpenClaw-specific tool and runtime checks; a ready Hermes skill does not prove OpenClaw support.
+
+The Hermes guidance covers bounded revision feedback, durable research-review notes, reversible evidence organisation, and scoped source/export checks. Markdown/PDF text extraction, HTML image paths, PDF image placements, and exporter-specific pagination are inspection methods, not blanket compatibility claims. The documented procedures still need exercising on the exact documents and available tools before reporting a successful export, filesystem/share test, or installation.
 
 ## Hermes installation
 

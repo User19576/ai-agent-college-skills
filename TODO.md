@@ -3,7 +3,7 @@
 ## OpenClaw adaptations — after Hermes readiness
 
 - Project standard: finish the corresponding Hermes skill work first, then adapt it for OpenClaw as a separate follow-up phase. Do not treat OpenClaw parity as a prerequisite for completing Hermes work.
-- Once the current Hermes academic-support and export-verification work is ready, adapt its reusable improvements into the corresponding `openclaw-skills/` copies. Keep OpenClaw-native tools and verify capabilities separately; the current Hermes changes have not yet been ported.
+- Once the current Hermes academic-support, evidence-audit, and export-verification work is ready, adapt its reusable improvements into the corresponding `openclaw-skills/` copies. Include bounded revision feedback, stale-finding reconciliation, research-review stages, scoped cleanup and reversible scan organisation, the filesystem/share reference, version authority, text-extraction limits, HTML image resolution, placement checks, and exporter-gated pagination. Keep OpenClaw-native tools and verify capabilities separately; these Hermes changes have not yet been ported. Source review does not establish document/exporter, filesystem/share, installation, or OpenClaw runtime results.
 
 ## OpenClaw document skills
 
