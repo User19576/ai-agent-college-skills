@@ -8,7 +8,7 @@ Four agent-created skills for Hermes, plus separate OpenClaw adaptations, grew o
 
 - [`academic-assignment-support`](skills/academic-assignment-support/SKILL.md) helps review briefs and drafts while keeping assessed writing with the learner. It includes a course-specific rules reference and an AI-use disclosure template.
 - [`completed-assignment-cleanup`](skills/completed-assignment-cleanup/SKILL.md) helps archive old drafts without changing the submitted file or original evidence.
-- [`assessment-evidence-audit`](skills/assessment-evidence-audit/SKILL.md) maps brief requirements to visible evidence in the current report and flags gaps without inventing proof.
+- [`assessment-evidence-audit`](skills/assessment-evidence-audit/SKILL.md) maps brief requirements to visible evidence in the current report and flags gaps without inventing proof. Its [filesystem and share evidence reference](skills/assessment-evidence-audit/references/filesystem-and-share-evidence.md) distinguishes command scope, permission modes, recursive changes, and mount evidence.
 - [`assignment-export-verification`](skills/assignment-export-verification/SKILL.md) compares an editable report with its PDF/DOCX export and checks images and page layout.
 
 These are copies of skills from my own Hermes setup, not official Hermes skills. [Design principles](DESIGN_PRINCIPLES.md) explains the choices behind them.
@@ -16,6 +16,8 @@ These are copies of skills from my own Hermes setup, not official Hermes skills.
 ## Development approach
 
 Hermes comes first: develop and review skills and improvements in `skills/` before adapting them for OpenClaw. OpenClaw equivalents follow once the corresponding Hermes work is ready; they are not developed in parallel by default or required to complete the Hermes phase. Existing `openclaw-skills/` copies may therefore lag behind Hermes. Deferred adaptations are tracked in [TODO.md](TODO.md). Each adaptation still needs OpenClaw-specific tool and runtime checks; a ready Hermes skill does not prove OpenClaw support.
+
+The Hermes guidance covers bounded revision feedback, durable research-review notes, reversible evidence organisation, and scoped source/export checks. Markdown/PDF text extraction, HTML image paths, PDF image placements, and exporter-specific pagination are inspection methods, not blanket compatibility claims. The documented procedures still need exercising on the exact documents and available tools before reporting a successful export, filesystem/share test, or installation.
 
 ## Hermes installation
 
@@ -81,10 +83,10 @@ Hermes skips locally edited skills by default; compare those edits with upstream
 
 ### Install via Hermes prompt
 
-Paste this once into Hermes. It will ask which optional [profile suggestions](installation/PROFILE_SUGGESTIONS.md) you want, gather only the identifiers you choose to save, and show one combined plan. After typed approval, it will install, apply approved profile changes, and verify them. You can choose skills only. After verification, it will separately offer an optional third-party skill; that offer is not part of the approved installation.
+Paste this once into Hermes. It will ask which optional [profile suggestions](installation/PROFILE_SUGGESTIONS.md) you want, gather only the identifiers you choose to save, and show one combined plan. After typed approval, it will install, apply approved profile changes, and verify them. You can choose skills only. After verification, it links the optional [Caveman skills](#optional-caveman-skills) for you to explore and install manually using the upstream instructions. Caveman installation is not part of this prompt or approval.
 
 ```text
-Install academic-assignment-support, completed-assignment-cleanup, assessment-evidence-audit, and assignment-export-verification directly from https://github.com/User19576/hermes-agent-college-skills into my Hermes profile; no clone. Read installation/FOR_HERMES.md and installation/PROFILE_SUGGESTIONS.md there. In this setup, use clarify (or equivalent) to ask which optional SOUL.md, USER.md, MEMORY.md changes I want; offer skills-only. Ask exact identifiers only if I choose to save them; infer none, write no placeholders. If questions time out or the tool is unavailable, ask in chat and wait; never assume skills-only. Preview one exact plan and the observed LOW scan warning. Wait for the guide's typed approval before any installation or profile write. Then complete and verify all approved changes without a second installation request. Only after verification, explain the optional third-party skill from juliusbrussee/caveman, link its source, give its install command, and ask whether I want it. Do not install it under this approval.
+Install academic-assignment-support, completed-assignment-cleanup, assessment-evidence-audit, and assignment-export-verification directly from https://github.com/User19576/hermes-agent-college-skills into my Hermes profile; no clone. Read installation/FOR_HERMES.md and installation/PROFILE_SUGGESTIONS.md there. In this setup, use clarify (or equivalent) to ask which optional SOUL.md, USER.md, MEMORY.md changes I want; offer skills-only. Ask exact identifiers only if I choose to save them; infer none, write no placeholders. If questions time out or the tool is unavailable, ask in chat and wait; never assume skills-only. Preview one exact plan and the observed LOW scan warning. Wait for the guide's typed approval before any installation or profile write. Then complete and verify all approved changes without a second installation request. Only after verification, briefly recommend optional Caveman skills by linking https://github.com/JuliusBrussee/caveman and its current installation instructions at https://github.com/JuliusBrussee/caveman/blob/main/INSTALL.md. Direct me to the manual skills-only route for my chosen agent, not Caveman services or runtime setup. Do not offer to install Caveman, ask installation-selection questions, or supply a Caveman installation prompt; this workflow ends with the recommendation and links.
 ```
 
 ## OpenClaw installation
@@ -126,12 +128,14 @@ Hermes normally bundles these five skills, so you usually don't need to install 
 
 This list shows related tools, not a count of past skill uses. The skills in this repository use the [MIT License](LICENSE). The related skills above keep their own licenses.
 
-### Optional skill not included with standard Hermes installs
+### Optional Caveman skills
 
-[`caveman`](https://github.com/juliusbrussee/caveman/blob/main/skills/caveman/SKILL.md) from [`juliusbrussee/caveman`](https://github.com/juliusbrussee/caveman) offers terse replies while retaining technical detail. It is not one of this repository's four skills and is not part of the install above. Inspect the upstream skill before choosing to install it. For the default profile, run:
+The [Caveman repository](https://github.com/JuliusBrussee/caveman) includes skills for shorter replies and coding workflows. They are third-party skills, not included with standard Hermes installs or this repository's four college skills. You do not need them to use the college skills, but they are recommended for reduced costs and shorter answers.
 
-```sh
-hermes skills install juliusbrussee/caveman/skills/caveman
-```
+For reply style, [`caveman`](https://github.com/JuliusBrussee/caveman/blob/main/skills/caveman/SKILL.md) aims to remove filler while keeping technical detail. [`ultracave`](https://github.com/JuliusBrussee/caveman/blob/main/skills/ultracave/SKILL.md) uses shorter fragments; [`megacave`](https://github.com/JuliusBrussee/caveman/blob/main/skills/megacave/SKILL.md) uses Classical Chinese. These are separate skills: installing `caveman` alone does not install the other modes. Workflow skills such as [`investigate-first`](https://github.com/JuliusBrussee/caveman/blob/main/skills/investigate-first/SKILL.md) and [`verify-and-stop`](https://github.com/JuliusBrussee/caveman/blob/main/skills/verify-and-stop/SKILL.md) guide diagnosis and focused verification.
 
-For a named profile, run `hermes -p NAME skills install juliusbrussee/caveman/skills/caveman` with its real profile name. Review the security scan and any existing same-named skill before confirming. Start a new chat in that profile and check `/skills` or `hermes skills list --enabled-only` (add `-p NAME` for a named profile). Installation does not enable a standing reply style by itself; request the style separately if wanted.
+This recommendation is for **skills only**, selected from the current upstream source without a required connection to Caveman Cloud services. I personally don't recommend using said Caveman services, at least not on the free plan. The skills still use your agent's model and tools; a hosted model is not offline. Some skills need scripts, model APIs, a local CLI, or host-specific features. Skills requiring a Caveman service are omitted from the offer, without suggestions to install them later.
+
+#### Manual installation
+
+Visit the [Caveman repository](https://github.com/JuliusBrussee/caveman) and follow its current [installation instructions](https://github.com/JuliusBrussee/caveman/blob/main/INSTALL.md). Choose the skills-only route and the instructions for your agent, rather than the full runtime or service setup. This repository does not provide a prompt for Hermes or another agent to install Caveman for you.

@@ -9,13 +9,13 @@
 
 Implemented in [optional profile guidance](installation/PROFILE_SUGGESTIONS.md) and [the approval-gated installation guide](installation/FOR_HERMES.md). The optional identity example retains `[FULL_NAME]` and uses `[COURSE]`. For a confirmed Network Administration learner, the agent strongly recommends but never requires saving `[STUDENT_NUMBER]`; use in coursework still depends on the current brief.
 
-## Post-install optional skill guidance
+## Manual Caveman recommendation
 
-- Name the optional `caveman` source as `juliusbrussee/caveman` in the installation prompt and instructions, rather than leaving its origin ambiguous.
-- After installing and verifying the four college skills, tell the user about additional skills not bundled with standard Hermes installs. Explain their purpose, provide an install option and exact command, and do not treat the original install approval as consent for another skill.
-- Link the third-party `caveman` skill and its installation command.
+- Preserve the user's Caveman recommendation and skill examples in [README.md](README.md), with a manual installation option linking the [upstream repository](https://github.com/JuliusBrussee/caveman) and its [current installation instructions](https://github.com/JuliusBrussee/caveman/blob/main/INSTALL.md).
+- After verifying the four college skills, Hermes recommends those links only. The user chooses the skills-only instructions for their agent and installs independently; there is no Caveman installation prompt, selection/approval workflow, or runtime/service setup in this repository's active instructions.
+- The earlier agent-assisted guide is archived, not deleted without preservation. Its planned OpenClaw counterpart is superseded by the manual-only decision. This is a documentation change, not an exercised installation or an offline-operation guarantee.
 
-Implemented in [README.md](README.md) and [the agent installation guide](installation/FOR_HERMES.md). The optional skill is [`juliusbrussee/caveman/skills/caveman`](https://github.com/juliusbrussee/caveman/blob/main/skills/caveman/SKILL.md); install it separately with `hermes skills install juliusbrussee/caveman/skills/caveman` if the user chooses it.
+Implemented in [README.md](README.md) and [the Hermes college installation guide](installation/FOR_HERMES.md); reviewed and approved by the user. Caveman documentation work is complete. Earlier direct-install commands and agent-assisted Caveman plans are superseded; originals remain in `archive/` snapshots.
 
 ## OpenClaw installation route
 
