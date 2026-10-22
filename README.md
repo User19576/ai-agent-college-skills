@@ -21,13 +21,63 @@ Hermes comes first: develop and review skills and improvements in `skills/` befo
 
 ### Manual installation
 
-1. Get the files from GitHub. Use **Code → Download ZIP** and extract it, or run `git clone https://github.com/User19576/hermes-agent-college-skills.git`.
-2. Read the four skills linked above. [`standing-ai-use-rules.md`](skills/academic-assignment-support/references/standing-ai-use-rules.md) quotes a brief from my course and includes a clarification reported by one learner. Even if you're in the same course, check your own current brief and instructor directions.
-3. Open your Hermes skills folder: `%LOCALAPPDATA%\hermes\skills` on Windows or `~/.hermes/skills` on macOS/Linux. If you use a named profile, find its own `profiles/<name>/skills` folder under your Hermes home. If `HERMES_HOME` is set to the active profile, use its `skills` folder. Create the folder if it doesn't exist.
-4. Copy `academic-assignment-support/`, `completed-assignment-cleanup/`, `assessment-evidence-audit/`, and `assignment-export-verification/` from this repository's `skills/` into your Hermes `skills/`. Keep `SKILL.md` and any `references/` or `templates/` folders in place. If any skill already exists, back it up and compare the copies before replacing it.
-5. Start a new chat in that profile and type `/skills`. You should see all four names. You can also run `hermes skills list --enabled-only` (or `hermes -p NAME skills list --enabled-only` for a named profile). If a skill is missing, check that `SKILL.md` sits directly inside its folder.
+Use Hermes' GitHub installer rather than copying folders. It records each skill's source so Hermes can check for updates later. You do not need a clone, ZIP download, or third-party tap.
+
+#### Fresh installation
+
+1. Read the four skills linked above. [`standing-ai-use-rules.md`](skills/academic-assignment-support/references/standing-ai-use-rules.md) quotes a brief from my course and includes a clarification reported by one learner. Even if you're in the same course, check your own current brief and instructor directions.
+2. Choose the target Hermes profile and check for same-named installed skills. Back up their complete directories outside the profile's skill folders and compare any local edits before replacing them. If you previously copied these skills into place, follow [Migrating old folder copies](#migrating-old-folder-copies) first.
+3. Run these commands in a terminal for the default profile. For a named profile, replace each `hermes skills install` with `hermes -p NAME skills install`, using its real profile name. Review each security scan and confirm only if you accept the source and any warnings. Do not use `--force` to bypass a blocked scan. Check that each command reports `Installed:`; a cancelled prompt is not a successful installation.
+
+   ```sh
+   hermes skills install User19576/ai-agent-college-skills/skills/academic-assignment-support
+   hermes skills install User19576/ai-agent-college-skills/skills/completed-assignment-cleanup
+   hermes skills install User19576/ai-agent-college-skills/skills/assessment-evidence-audit
+   hermes skills install User19576/ai-agent-college-skills/skills/assignment-export-verification
+   ```
+
+4. Run `hermes skills list --source hub --enabled-only` (or `hermes -p NAME skills list --source hub --enabled-only`). Confirm all four names and inspect their installed directories for `SKILL.md` and any source `references/` or `templates/` folders. Start a new chat in that profile and check `/skills` to confirm discovery there.
 
 This installs only the four skills. It does not change `SOUL.md`, `memories/USER.md`, or `memories/MEMORY.md`. If you want to consider separate profile changes, see the optional [coursework profile suggestions](installation/PROFILE_SUGGESTIONS.md). They are not intended to copy my personal details into your profile. See the [Hermes skills guide](https://hermes-agent.nousresearch.com/docs/guides/work-with-skills) for more on loading skills.
+
+#### Migrating old folder copies
+
+Skills copied from a ZIP or clone do not have a registered update source. To migrate those copies:
+
+1. Locate the four college skill directories in the target profile. Compare their contents with this repository, including any `references/` and `templates/` folders, and identify local edits you want to keep.
+2. Move only those old copied directories to a unique backup location outside all configured skill folders. Keep the complete backups; do not delete them.
+3. Run the four GitHub installer commands above for that same profile, then verify the installation as described in step 4. If installation fails, preserve any partial result separately before restoring the affected old directories from backup. Restoring folder copies does not register them for updates.
+
+Keep local edits in the backup until you decide whether to reapply them. Reapplying edits makes the installed skill locally modified, so Hermes will skip it during normal updates.
+
+### Updating Hermes skills
+
+Both the manual commands above and the agent-assisted installer below record the GitHub source. Updates are explicit, not automatic. Back up installed skills before updating and review the check results first.
+
+These commands check and update **all hub-installed skills in the selected profile**, including unrelated skills:
+
+```sh
+hermes skills check
+hermes skills update
+```
+
+To limit the operation to one college skill, include its name:
+
+```sh
+hermes skills check academic-assignment-support
+hermes skills update academic-assignment-support
+```
+
+Repeat with the other college skill names if you want to update only this collection. For a named profile, replace `NAME` with its real profile name:
+
+```sh
+hermes -p NAME skills check
+hermes -p NAME skills update
+```
+
+Those commands also cover all hub-installed skills in that profile. Append a skill name to target only that skill, for example `hermes -p NAME skills update academic-assignment-support`.
+
+Hermes skips locally edited skills by default; compare those edits with upstream rather than using `--force` as routine maintenance. Review the update result, verify the installed files, and check the skills in a new chat. See the [Hermes update lifecycle](https://hermes-agent.nousresearch.com/docs/user-guide/features/skills#update-lifecycle).
 
 ### Install via Hermes prompt
 
